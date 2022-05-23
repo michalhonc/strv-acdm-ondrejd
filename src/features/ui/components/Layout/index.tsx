@@ -4,6 +4,6 @@ import { Header } from '~/features/ui/components/Header'
 export const Layout = ({ children }) => (
   <>
     <Header />
-    <main>{children}</main>
+    <main style={{ border: '1px solid red' }}>{children}</main>
   </>
 )
