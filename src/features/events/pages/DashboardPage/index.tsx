@@ -1,11 +1,12 @@
-import { Card } from '~/features/ui/components/Card'
-import { Filter } from '~/features/ui/components/Filter'
+import type { NextPage } from 'next'
+
 import { Layout } from '~/features/ui/components/Layout'
 
-export const DashboardPage = () => (
+import { EventList } from '../../components/EventList'
+
+export const DashboardPage: NextPage = () => (
   <Layout>
     <h1>This is Dashboard Page!</h1>
-    <Filter />
-    <Card />
+    <EventList />
   </Layout>
 )
