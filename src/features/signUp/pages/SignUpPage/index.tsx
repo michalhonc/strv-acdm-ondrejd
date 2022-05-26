@@ -1,7 +1,7 @@
-import { Layout } from '~/features/ui/components/Layout'
+import { LayoutExternal } from '~/features/ui/components/LayoutExternal'
 
 export const SignUpPage = () => (
-  <Layout>
-    <h1>This is Sign Up Page!</h1>
-  </Layout>
+  <LayoutExternal>
+    <h1>This is Sign Up Page on LayoutExternal!</h1>
+  </LayoutExternal>
 )

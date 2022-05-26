@@ -1,20 +1,27 @@
 import type { FC } from 'react'
 
+import { Card } from './parts/Card'
+import { EventView } from './parts/EventView'
+import { Filter } from './parts/Filter'
+
 export const EventList: FC = () => (
   <>
+    <h2>Events List</h2>
     <nav>
-      <div>Filter</div>
-      <div>EventView</div>
+      <Filter onChange={(e) => console.log('clicked on filter, type: ', e)} />
+      <EventView
+        onChange={(e) => console.log('clicked on EventView, type:', e)}
+      />
     </nav>
     <ul>
       <li>
-        <div>Card</div>
+        <Card />
       </li>
       <li>
-        <div>Card</div>
+        <Card />
       </li>
       <li>
-        <div>Card</div>
+        <Card />
       </li>
     </ul>
   </>
