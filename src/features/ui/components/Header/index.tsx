@@ -16,8 +16,13 @@ export const Header: FC<Props> = ({ user }) => {
   return (
     <header style={{ border: '1px solid blue' }}>
       <Logo />
+      {/* {TODO: change to the switch statement} */}
       {router.pathname === '/login' && <SignUp />}
       {router.pathname === '/signUp' && <SignIn />}
+      {/* <p>{router.asPath}</p>
+      <p>{router.pathname}</p> */}
+      {router.pathname === '/events/[slug]' && !user && <SignIn />}
+      {router.pathname === '/events/[slug]' && user && <UserMenu />}
       {router.pathname === '/' && !user && <SignIn />}
       {router.pathname === '/' && user && <UserMenu />}
     </header>

@@ -5,7 +5,10 @@ export const Card: FC = () => (
     <time dateTime="2008-02-14 20:00"> May 26, 2022 - 11:53 AM</time>
     <h3>Valentines day!!!</h3>
     <p>Ondrej D</p>
-    <p>I will show you how to create a best Valentines present</p>
+    <p>
+      If you have ever felt confused then you are not alone. I will show you the
+      way.
+    </p>
     <p>
       11 <span>of</span> 10
     </p>
