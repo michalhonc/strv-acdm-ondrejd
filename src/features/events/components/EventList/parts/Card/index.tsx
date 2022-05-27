@@ -6,6 +6,9 @@ export const Card: FC = () => (
     <h3>Valentines day!!!</h3>
     <p>Ondrej D</p>
     <p>I will show you how to create a best Valentines present</p>
+    <p>
+      11 <span>of</span> 10
+    </p>
     <button type="button">CTA</button>
   </article>
 )

@@ -8,7 +8,9 @@ import { EventList } from '../../components/EventList'
 
 export const DashboardPage: NextPage = () => (
   <LayoutInternal>
-    <Head>
+    <Head
+    // This tag "re-assigns" the one in the __app or document file
+    >
       <title>Event dashboard</title>
     </Head>
     <h1>This is Dashboard Page on LayoutInternal!</h1>

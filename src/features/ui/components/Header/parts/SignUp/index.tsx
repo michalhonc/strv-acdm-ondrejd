@@ -6,7 +6,12 @@ import { Routes } from '~/features/core/constants/routes'
 export const SignUp: FC = () => (
   <Link href={Routes.SIGNUP}>
     <div>
-      Dont have an account? <b>Sign Up</b>
+      Dont have an account?{' '}
+      <span>
+        <button type="button">
+          <b>Sign Up</b>
+        </button>
+      </span>
     </div>
   </Link>
 )
