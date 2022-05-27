@@ -14,13 +14,13 @@ export const EventList: FC = () => (
       />
     </nav>
     <ul>
-      <li>
+      <li tabIndex={0}>
         <Card />
       </li>
-      <li>
+      <li tabIndex={0}>
         <Card />
       </li>
-      <li>
+      <li tabIndex={0}>
         <Card />
       </li>
     </ul>
