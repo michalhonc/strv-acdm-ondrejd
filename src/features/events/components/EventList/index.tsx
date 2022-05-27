@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { FC } from 'react'
 
 import { Card } from './parts/Card'
@@ -14,15 +15,11 @@ export const EventList: FC = () => (
       />
     </nav>
     <ul>
-      <li tabIndex={0}>
-        <Card />
-      </li>
-      <li tabIndex={0}>
-        <Card />
-      </li>
-      <li tabIndex={0}>
-        <Card />
-      </li>
+      <Link href="/events/this-is-just-a-random-slug">
+        <li tabIndex={0}>
+          <Card />
+        </li>
+      </Link>
     </ul>
   </>
 )

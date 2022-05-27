@@ -5,7 +5,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string
 }
 
-export const Input: FC<Props> = ({ label, name, type, ...rest }) => {
+export const Input: FC<Props> = ({ name, label, type, ...rest }) => {
   const [isPasswordShown, togglePassword] = useState(false)
   const inputType = isPasswordShown ? 'text' : type
 
