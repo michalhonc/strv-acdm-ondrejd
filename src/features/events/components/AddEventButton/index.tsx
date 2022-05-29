@@ -1,8 +1,15 @@
 import React from 'react'
+import type { FC } from 'react'
 
-export const AddEventButton = () => {
+type Props = {
+  form?: string
+  ariaLabel?: string
+  type?: 'reset' | 'submit' | 'button'
+}
+
+export const AddEventButton: FC<Props> = ({ type, ariaLabel, form }) => {
   return (
-    <button type="button" aria-label="Add a new event">
+    <button type={type} aria-label={ariaLabel} form={form}>
       PLUS BUTTON
     </button>
   )

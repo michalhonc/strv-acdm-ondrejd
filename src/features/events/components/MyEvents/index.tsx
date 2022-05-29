@@ -1,16 +1,13 @@
 import Link from 'next/link'
 import type { FC } from 'react'
 
-import { Filter } from './parts/Filter'
-
 import { Card } from '../Card'
 import { EventView } from '../EventView'
 
-export const EventList: FC = () => (
+export const MyEvents: FC = () => (
   <>
-    <h2>Events List</h2>
+    <h2>My Events</h2>
     <nav>
-      <Filter onChange={(e) => console.log('clicked on filter, type: ', e)} />
       <EventView
         onChange={(e) => console.log('clicked on EventView, type:', e)}
       />
@@ -21,8 +18,18 @@ export const EventList: FC = () => (
           <Card />
         </li>
       </Link>
+      <Link href="/events/this-is-just-a-random-slug">
+        <li tabIndex={0}>
+          <Card />
+        </li>
+      </Link>
+      <Link href="/events/this-is-just-a-random-slug">
+        <li tabIndex={0}>
+          <Card />
+        </li>
+      </Link>
     </ul>
   </>
 )
 
-EventList.displayName = 'MyLayout'
+MyEvents.displayName = 'MyLayout'

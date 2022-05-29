@@ -9,7 +9,7 @@ export const SignUp: FC = () => (
       Dont have an account?{' '}
       <span>
         <button type="button">
-          <b>Sign Up</b>
+          <b>SIGN UP</b>
         </button>
       </span>
     </div>

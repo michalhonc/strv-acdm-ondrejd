@@ -12,8 +12,7 @@ export const LoginPage: NextPage = () => {
 
   return (
     <LayoutExternal>
-      <h1>This is Sign In/Login Page on LayoutExternal!</h1>
-      <h2>Sign in to Eventio.</h2>
+      <h1>Sign in to Eventio.</h1>
       <p>Enter your details below.</p>
       <form onSubmit={handleSubmit} id="complicatedForm">
         <Input label="email" type="email" name="email" />
@@ -21,7 +20,7 @@ export const LoginPage: NextPage = () => {
       </form>
       {/* Button outside the form element it handy when handling complicated layout */}
       <button form="complicatedForm" type="submit">
-        Sign In
+        SIGN IN
       </button>
     </LayoutExternal>
   )

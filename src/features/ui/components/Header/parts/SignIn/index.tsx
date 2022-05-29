@@ -9,7 +9,7 @@ export const SignIn: FC = () => (
       Already have an account?{' '}
       <span>
         <button type="button">
-          <b>Sign In</b>
+          <b>SIGN IN</b>
         </button>
       </span>
     </div>
