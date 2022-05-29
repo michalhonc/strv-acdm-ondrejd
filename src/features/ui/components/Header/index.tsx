@@ -19,10 +19,20 @@ export const Header: FC<Props> = ({ user }) => {
       {/* {TODO: change to the switch statement} */}
       {router.pathname === '/login' && <SignUp />}
       {router.pathname === '/signUp' && <SignIn />}
+
+      {/* {Difference between asPath and pathname} */}
       {/* <p>{router.asPath}</p>
       <p>{router.pathname}</p> */}
+
+      {/* {This will; be replaced with global state of "user"} */}
       {router.pathname === '/events/[slug]' && !user && <SignIn />}
       {router.pathname === '/events/[slug]' && user && <UserMenu />}
+
+      {router.pathname === '/events/create' && !user && <SignIn />}
+      {router.pathname === '/events/create' && user && <UserMenu />}
+
+      {router.pathname === '/profile' && user && <UserMenu />}
+
       {router.pathname === '/' && !user && <SignIn />}
       {router.pathname === '/' && user && <UserMenu />}
     </header>

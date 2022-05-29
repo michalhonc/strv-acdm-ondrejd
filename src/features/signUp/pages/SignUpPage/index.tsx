@@ -12,8 +12,7 @@ export const SignUpPage: NextPage = () => {
 
   return (
     <LayoutExternal>
-      <h1>This is Sign Up Page on LayoutExternal!</h1>
-      <h2>Get started absolutely free.</h2>
+      <h1>Get started absolutely free.</h1>
       <p>Enter your details below.</p>
       <form onSubmit={handleSubmit}>
         <Input label="First name" type="text" name="firstName" />

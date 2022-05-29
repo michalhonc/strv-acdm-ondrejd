@@ -31,6 +31,7 @@ export const DashboardPage: NextPage = () => (
 /// Can I really just pass  <AddEventButton /> inside the a tag and get with it?
 /// https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-functional-component
 /// https://stackoverflow.com/questions/66421459/warning-function-components-cannot-be-given-refs
+// https://github.com/vercel/next.js/issues/7915
 
 // export const DashboardPage: NextPage = () => (
 //   <LayoutInternal>
