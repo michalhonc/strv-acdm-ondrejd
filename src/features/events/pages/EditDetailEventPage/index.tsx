@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import type { FormEvent } from 'react'
 
 import { Input } from '~/features/ui/components/Input'
@@ -15,6 +16,9 @@ export const EditDetailEventPage: NextPage = () => {
 
   return (
     <LayoutInternal>
+      <Head>
+        <title>Edit event</title>
+      </Head>
       <h1>Detail event: #this-is-just-a-random-slug</h1>
       <button>DELETE EVENT</button>
       <form onSubmit={handleSubmit} id="complicatedForm">

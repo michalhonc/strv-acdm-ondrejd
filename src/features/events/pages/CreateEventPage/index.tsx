@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import type { FormEvent } from 'react'
 
 import { Input } from '~/features/ui/components/Input'
@@ -11,6 +12,9 @@ export const CreateEventPage: NextPage = () => {
   }
   return (
     <LayoutInternal>
+      <Head>
+        <title>Create new event</title>
+      </Head>
       <h1>Create new event</h1>
       <p>Enter details below.</p>
       <form onSubmit={handleSubmit}>

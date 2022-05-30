@@ -1,17 +1,34 @@
-import type { FC } from 'react'
+import Link from 'next/link'
+import type { FC, TimeHTMLAttributes } from 'react'
 
-export const Card: FC = () => (
+import { Routes } from '~/features/core/constants/routes'
+
+type Props = TimeHTMLAttributes<HTMLTimeElement> & {
+  author?: string
+  title?: string
+  description?: string
+  currentCapacity?: number
+  maxCapacity?: number
+}
+
+export const Card: FC<Props> = ({
+  dateTime = '2008-02-14 20:00',
+  title = 'Valentines day!!!',
+  author = 'Ondrej Dr',
+  description = 'If you have ever felt confused then you are not alone. I will show you the way.',
+  currentCapacity = 11,
+  maxCapacity = 10,
+}) => (
   <article style={{ border: '1px solid black' }}>
-    <time dateTime="2008-02-14 20:00"> May 26, 2022 - 11:53 AM</time>
-    <h3>Valentines day!!!</h3>
-    <p>Ondrej D</p>
+    <time dateTime={dateTime}>{dateTime}</time>
+    <h3>{title}</h3>
+    <p>{author}</p>
+    <p>{description}</p>
     <p>
-      If you have ever felt confused then you are not alone. I will show you the
-      way.
+      {currentCapacity} <span>of</span> {maxCapacity}
     </p>
-    <p>
-      11 <span>of</span> 10
-    </p>
-    <button type="button">CTA</button>
+    <Link href={Routes.EDIT}>
+      <button type="button">EDIT (or VIEW or JOIN)</button>
+    </Link>
   </article>
 )

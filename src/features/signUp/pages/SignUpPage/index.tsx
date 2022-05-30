@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import type { FormEvent } from 'react'
 
 import { Input } from '~/features/ui/components/Input'
@@ -12,6 +13,9 @@ export const SignUpPage: NextPage = () => {
 
   return (
     <LayoutExternal>
+      <Head>
+        <title>Sign up to Eventio</title>
+      </Head>
       <h1>Get started absolutely free.</h1>
       <p>Enter your details below.</p>
       <form onSubmit={handleSubmit}>
