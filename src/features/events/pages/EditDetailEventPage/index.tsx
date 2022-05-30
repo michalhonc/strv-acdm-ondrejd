@@ -5,7 +5,6 @@ import type { FormEvent } from 'react'
 import { Input } from '~/features/ui/components/Input'
 import { LayoutInternal } from '~/features/ui/components/LayoutInternal'
 
-import { AddEventButton } from '../../components/AddEventButton'
 import { Attendees } from '../../components/Attendees'
 
 export const EditDetailEventPage: NextPage = () => {
@@ -27,12 +26,12 @@ export const EditDetailEventPage: NextPage = () => {
         <Input label="Date" type="date" name="time" />
         <Input label="Time" type="time" name="time" />
         <Input label="Capacity" type="number" name="capacity" />
+        <button type="submit" form="complicatedForm" />
       </form>
 
       {/* <button form="complicatedForm" type="submit">
         SIGN IN
       </button> */}
-      <AddEventButton type="submit" form="complicatedForm" />
       <Attendees />
     </LayoutInternal>
   )

@@ -29,9 +29,5 @@ export const HeadDefault: FC = () => (
       property="og:image"
       content="https://drive.google.com/file/d/19Z0JS8HD2aSj9kjaANLVRxlf4Dplgb0Y/view?usp=sharing/og-image.jpg"
     />
-    <meta
-      name="google-site-verification"
-      content="kDxLTOQ_Db0w5ZcbC-id-mmVVFGbl-iwe6oM52U__jc"
-    />
   </Head>
 )
