@@ -20,9 +20,9 @@ export const DashboardPage: NextPage = () => (
     <section>
       <EventList />
       <Link href={Routes.CREATE_EVENT}>
-        <a>
+        <div>
           <AddEventButton />
-        </a>
+        </div>
       </Link>
     </section>
   </LayoutInternal>
