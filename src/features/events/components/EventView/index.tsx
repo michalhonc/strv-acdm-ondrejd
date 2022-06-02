@@ -1,21 +1,18 @@
 import type { FC } from 'react'
 
-enum ViewType {
-  list = 'list',
-  grid = 'grid',
-}
+import { ViewType } from './types'
 
 type Props = {
-  onChange: (viewType: ViewType) => void
+  onChange: (ViewType: ViewType) => void
 }
 
 export const EventView: FC<Props> = ({ onChange }) => (
-  <ul style={{ border: '1px solid black' }}>
+  <ul>
     <li>
       <button
         type="button"
         aria-label="Cards view"
-        onClick={() => onChange(ViewType.grid)}
+        onClick={() => onChange(ViewType.GRID)}
       >
         #
       </button>
@@ -24,7 +21,7 @@ export const EventView: FC<Props> = ({ onChange }) => (
       <button
         type="button"
         aria-label="List view"
-        onClick={() => onChange(ViewType.list)}
+        onClick={() => onChange(ViewType.LIST)}
       >
         =
       </button>

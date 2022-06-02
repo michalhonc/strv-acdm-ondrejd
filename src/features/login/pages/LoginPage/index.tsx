@@ -1,11 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import type { FormEvent } from 'react'
+import { useState } from 'react'
 
+import { Button } from '~/features/ui/components/Button'
 import { Input } from '~/features/ui/components/Input'
 import { LayoutExternal } from '~/features/ui/components/LayoutExternal'
 
+import { SubmitButton } from './styled'
+
 export const LoginPage: NextPage = () => {
+  const [error, setError] = useState('')
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('sent the LOGIN form')
@@ -23,9 +29,20 @@ export const LoginPage: NextPage = () => {
         <Input label="password" type="password" name="password" />
       </form>
       {/* Button outside the form element it handy when handling complicated layout */}
-      <button form="complicatedForm" type="submit">
+      {/* <button form="complicatedForm" type="submit">
         SIGN IN
-      </button>
+      </button> */}
+      {error && <p>{error}</p>}
+      <Button
+        type="button"
+        form="complicatedForm"
+        size="small"
+        accent="destructive"
+        onClick={() => setError(Date.now().toString())}
+      >
+        Trigger error
+      </Button>
+      <SubmitButton>SIGN IN</SubmitButton>
     </LayoutExternal>
   )
 }

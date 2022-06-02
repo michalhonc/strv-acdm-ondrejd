@@ -11,7 +11,7 @@ type Props = {
 }
 
 export const Filter: FC<Props> = ({ onChange }) => (
-  <ul style={{ border: '1px solid black' }}>
+  <ul>
     <li>
       <button type="button" onClick={() => onChange(FilterType.all)}>
         All events

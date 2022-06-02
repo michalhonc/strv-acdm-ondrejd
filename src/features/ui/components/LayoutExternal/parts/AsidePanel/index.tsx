@@ -1,13 +1,15 @@
 import type { FC } from 'react'
 
+import { Aside, Figure, Quote } from './styled'
+
 export const AsidePanel: FC = () => {
   return (
-    <aside>
-      <figure>
-        <q>Great, kid. Don&apos;t get cocky.</q>
+    <Aside>
+      <Figure>
+        <Quote>Great, kid. Don&apos;t get cocky.</Quote>
         <hr />
         <figcaption>San Holo</figcaption>
-      </figure>
-    </aside>
+      </Figure>
+    </Aside>
   )
 }

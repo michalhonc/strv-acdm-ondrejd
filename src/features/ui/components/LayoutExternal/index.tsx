@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react'
 
 import { AsidePanel } from './parts/AsidePanel'
+import { Wrapper } from './styled'
 
 import { Header } from '../Header'
 
@@ -12,10 +13,10 @@ export const LayoutExternal: FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <div style={{ border: '2px solid red' }}>
-        <main>{children}</main>
+      <Wrapper>
         <AsidePanel />
-      </div>
+        <main>{children}</main>
+      </Wrapper>
     </>
   )
 }
