@@ -13,6 +13,7 @@ export const Aside = styled.aside`
     align-items: center;
     justify-content: flex-end;
     width: 30%;
+    height: screen;
     max-width: 48rem;
     min-width: 30rem;
     color: ${colors.text.inverted};

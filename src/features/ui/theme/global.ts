@@ -4,6 +4,8 @@ import { createGlobalStyle } from 'styled-components'
 // import { font } from './typography'
 
 export const GlobalStyle = createGlobalStyle`
+
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;

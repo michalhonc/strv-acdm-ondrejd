@@ -7,10 +7,9 @@ import { List } from './styles'
 
 import { Card } from '../Card'
 import { EventView } from '../EventView'
-import type { ViewType } from '../EventView/types'
 
 export const EventList: FC = () => {
-  const [view, setView] = useState<ViewType | string>('GRID')
+  const [view, setView] = useState<string>('GRID')
   // const view = ViewType.GRID as ViewType
 
   return (

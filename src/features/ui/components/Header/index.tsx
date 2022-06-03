@@ -5,6 +5,7 @@ import { Logo } from './parts/Logo'
 import { SignIn } from './parts/SignIn'
 import { SignUp } from './parts/SignUp'
 import { UserMenu } from './parts/UserMenu'
+import { HeaderContainer } from './styled'
 
 type Props = {
   user?: string
@@ -14,7 +15,7 @@ export const Header: FC<Props> = ({ user }) => {
   const router = useRouter()
 
   return (
-    <header style={{ border: '1px solid blue' }}>
+    <HeaderContainer>
       <Logo />
       {/* {TODO: change to the switch statement} */}
       {router.pathname === '/login' && <SignUp />}
@@ -35,6 +36,6 @@ export const Header: FC<Props> = ({ user }) => {
 
       {router.pathname === '/' && !user && <SignIn />}
       {router.pathname === '/' && user && <UserMenu />}
-    </header>
+    </HeaderContainer>
   )
 }

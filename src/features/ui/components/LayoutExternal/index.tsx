@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
 
 import { AsidePanel } from './parts/AsidePanel'
-import { Wrapper } from './styled'
+import { Main, Wrapper } from './styled'
 
 import { Header } from '../Header'
 
@@ -11,13 +11,11 @@ type Props = {
 
 export const LayoutExternal: FC<Props> = ({ children }) => {
   return (
-    <>
+    <Wrapper>
       <Header />
-      <Wrapper>
-        <AsidePanel />
-        <main>{children}</main>
-      </Wrapper>
-    </>
+      <AsidePanel />
+      <Main>{children}</Main>
+    </Wrapper>
   )
 }
 

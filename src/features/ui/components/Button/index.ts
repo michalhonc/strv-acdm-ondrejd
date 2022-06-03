@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import reset from 'styled-reset'
 
 import { colors } from '../../theme/colors'
+import { StyleReset } from '../StyleReset'
 
 type ButtonProps = {
   size?: 'small' | 'medium'
@@ -14,7 +14,8 @@ export const Button = styled.button<ButtonProps>`
   --background-color: ${colors.background.dark};
   --background-color-hover: ${colors.background.dark};
 
-  ${reset}
+  // Regular style component styles
+  ${StyleReset}
   //typography.label.large}
   padding: 0.8rem 5.6rem;
   color: var(--text-color);
@@ -36,6 +37,7 @@ export const Button = styled.button<ButtonProps>`
     }
   }
 
+  // Accepting props
   ${(props) =>
     props.accent === 'primary' &&
     css`
@@ -54,7 +56,7 @@ export const Button = styled.button<ButtonProps>`
   ${(props) =>
     props.size === 'small' &&
     css`
-      typography.label.medium
+      /* typography.label.medium */
       padding: 0.3em 2em 0.2em;
     `}
 `

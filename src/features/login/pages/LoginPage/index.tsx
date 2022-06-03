@@ -25,24 +25,28 @@ export const LoginPage: NextPage = () => {
       <h1>Sign in to Eventio.</h1>
       <p>Enter your details below.</p>
       <form onSubmit={handleSubmit} id="complicatedForm">
-        <Input label="email" type="email" name="email" />
+        {error && <p>{error}</p>}
+        <Input
+          hasError={Boolean(error)}
+          error={error}
+          label="email"
+          type="email"
+          name="email"
+        />
         <Input label="password" type="password" name="password" />
       </form>
-      {/* Button outside the form element it handy when handling complicated layout */}
-      {/* <button form="complicatedForm" type="submit">
-        SIGN IN
-      </button> */}
-      {error && <p>{error}</p>}
+
       <Button
         type="button"
-        form="complicatedForm"
         size="small"
         accent="destructive"
         onClick={() => setError(Date.now().toString())}
       >
         Trigger error
       </Button>
-      <SubmitButton>SIGN IN</SubmitButton>
+
+      {/* Button outside the form element it handy when handling complicated layout */}
+      <SubmitButton form="complicatedForm">SIGN IN</SubmitButton>
     </LayoutExternal>
   )
 }
