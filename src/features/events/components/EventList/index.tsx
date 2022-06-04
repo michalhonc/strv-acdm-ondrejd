@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import { useState } from 'react'
 
 import { Filter } from './parts/Filter'
-import { List } from './styles'
+import { List, StyledNav } from './styled'
 
 import { Card } from '../Card'
 import { EventView } from '../EventView'
@@ -14,8 +14,7 @@ export const EventList: FC = () => {
 
   return (
     <>
-      <h2>Events List</h2>
-      <nav>
+      <StyledNav>
         <Filter onChange={(e) => console.log('clicked on filter, type: ', e)} />
         <EventView
           onChange={(e) => {
@@ -23,8 +22,18 @@ export const EventList: FC = () => {
             setView(e)
           }}
         />
-      </nav>
+      </StyledNav>
       <List view={view}>
+        <Link href="/events/this-is-just-a-random-slug">
+          <li tabIndex={0}>
+            <Card />
+          </li>
+        </Link>
+        <Link href="/events/this-is-just-a-random-slug">
+          <li tabIndex={0}>
+            <Card />
+          </li>
+        </Link>
         <Link href="/events/this-is-just-a-random-slug">
           <li tabIndex={0}>
             <Card />

@@ -7,4 +7,8 @@ export const StyledWrapper = styled.div`
 `
 export const StyledLink = styled.a`
   color: ${colors.text.dimmed};
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 `

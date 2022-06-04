@@ -1,7 +1,8 @@
 import type { ReactNode, FC } from 'react'
 
+import { Main, Wrapper } from './styled'
+
 import { Header } from '../Header'
-import { Main } from '../LayoutExternal/styled'
 
 type Props = {
   children: NonNullable<ReactNode>
@@ -9,9 +10,9 @@ type Props = {
 
 export const LayoutInternal: FC<Props> = ({ children }) => {
   return (
-    <>
+    <Wrapper>
       <Header />
-      <Main style={{ border: '2px solid green' }}>{children}</Main>
-    </>
+      <Main>{children}</Main>
+    </Wrapper>
   )
 }

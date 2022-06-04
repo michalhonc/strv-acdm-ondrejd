@@ -1,9 +1,11 @@
 import type { FC } from 'react'
 
+import { NavButton, StyledUl } from '../../styled'
+
 enum FilterType {
-  all = 'all',
-  future = 'future',
-  past = 'past',
+  ALL = 'ALL',
+  FUTURE = 'FUTURE',
+  PAST = 'PAST',
 }
 
 type Props = {
@@ -11,21 +13,21 @@ type Props = {
 }
 
 export const Filter: FC<Props> = ({ onChange }) => (
-  <ul>
+  <StyledUl>
     <li>
-      <button type="button" onClick={() => onChange(FilterType.all)}>
-        All events
-      </button>
+      <NavButton type="button" onClick={() => onChange(FilterType.ALL)}>
+        ALL EVENTS
+      </NavButton>
     </li>
     <li>
-      <button type="button" onClick={() => onChange(FilterType.future)}>
-        Future Events
-      </button>
+      <NavButton type="button" onClick={() => onChange(FilterType.FUTURE)}>
+        FUTURE EVENTS
+      </NavButton>
     </li>
     <li>
-      <button type="button" onClick={() => onChange(FilterType.past)}>
-        Past events
-      </button>
+      <NavButton type="button" onClick={() => onChange(FilterType.PAST)}>
+        PAST EVENTS
+      </NavButton>
     </li>
-  </ul>
+  </StyledUl>
 )

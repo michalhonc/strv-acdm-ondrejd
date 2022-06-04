@@ -9,6 +9,8 @@ export const Aside = styled.aside`
 
   ${mq.medium} {
     display: flex;
+    // Important otherwise it the Image layout fill wont work
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -23,6 +25,7 @@ export const Aside = styled.aside`
 `
 export const Figure = styled.figure`
   padding: 8rem clamp(2rem, 2.2vw, 4rem) 4rem;
+  position: relative;
 `
 
 export const Quote = styled.q`

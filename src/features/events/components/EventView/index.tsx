@@ -2,29 +2,31 @@ import type { FC } from 'react'
 
 import { ViewType } from './types'
 
+import { NavButton, StyledUl } from '../EventList/styled'
+
 type Props = {
   onChange: (ViewType: ViewType) => void
 }
 
 export const EventView: FC<Props> = ({ onChange }) => (
-  <ul>
+  <StyledUl>
     <li>
-      <button
+      <NavButton
         type="button"
         aria-label="Cards view"
         onClick={() => onChange(ViewType.GRID)}
       >
         #
-      </button>
+      </NavButton>
     </li>
     <li>
-      <button
+      <NavButton
         type="button"
         aria-label="List view"
         onClick={() => onChange(ViewType.LIST)}
       >
         =
-      </button>
+      </NavButton>
     </li>
-  </ul>
+  </StyledUl>
 )

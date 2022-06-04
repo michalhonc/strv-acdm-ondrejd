@@ -12,8 +12,8 @@ type Props = {
 export const LayoutExternal: FC<Props> = ({ children }) => {
   return (
     <Wrapper>
-      <Header />
       <AsidePanel />
+      <Header />
       <Main>{children}</Main>
     </Wrapper>
   )

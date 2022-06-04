@@ -3,6 +3,8 @@ import type { FC, TimeHTMLAttributes } from 'react'
 
 import { Routes } from '~/features/core/constants/routes'
 
+import { Article, Description, StyledSpan, TitleAuthorDiv } from './styled'
+
 type Props = TimeHTMLAttributes<HTMLTimeElement> & {
   author?: string
   title?: string
@@ -19,16 +21,21 @@ export const Card: FC<Props> = ({
   currentCapacity = 11,
   maxCapacity = 10,
 }) => (
-  <article style={{ border: '1px solid black' }}>
+  <Article>
     <time dateTime={dateTime}>{dateTime}</time>
-    <h3>{title}</h3>
-    <p>{author}</p>
-    <p>{description}</p>
-    <p>
-      {currentCapacity} <span>of</span> {maxCapacity}
-    </p>
-    <Link href={Routes.EDIT}>
-      <button type="button">EDIT (or VIEW or JOIN)</button>
-    </Link>
-  </article>
+    <TitleAuthorDiv>
+      <h3>{title}</h3>
+      <p>{author}</p>
+    </TitleAuthorDiv>
+    <Description>{description}</Description>
+    <StyledSpan>
+      <p>
+        {currentCapacity} <span>of</span> {maxCapacity}
+      </p>
+      <Link href={Routes.EDIT}>
+        {/* <button type="button">EDIT (or VIEW or JOIN)</button> */}
+        <button type="button">EDIT </button>
+      </Link>
+    </StyledSpan>
+  </Article>
 )

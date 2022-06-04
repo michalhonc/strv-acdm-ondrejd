@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+import { StyleReset } from '~/features/ui/components/StyleReset'
 import { colors } from '~/features/ui/theme/colors'
 
 import { ViewType } from '../EventView/types'
@@ -18,4 +19,25 @@ export const List = styled.ul<{ view: ViewType | string }>`
     css`
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     `}
+`
+
+export const StyledNav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+`
+// Contains general styling for ul element of the StyledNav component
+export const StyledUl = styled.ul`
+  display: flex;
+  // Getting rid of the default margin of the ul element
+  padding: 0;
+  list-style: none;
+  gap: 1rem;
+`
+export const NavButton = styled.button`
+  ${StyleReset}
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 `
