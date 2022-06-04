@@ -5,16 +5,16 @@ import { LabelText, StyledInput, Label, InputWrapper } from './styled'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string
-  hasError?: boolean
   error?: string
+  hasError?: boolean
 }
 
 export const Input: FC<Props> = ({
   name,
   label,
   type,
-  hasError,
   error,
+  hasError,
   ...rest
 }) => {
   const [isPasswordShown, togglePassword] = useState(false)
@@ -22,6 +22,7 @@ export const Input: FC<Props> = ({
 
   return (
     <InputWrapper>
+      {/* <Label key={error} hasError={Boolean(true)}> */}
       <Label key={error} hasError={hasError}>
         <StyledInput
           placeholder={label}

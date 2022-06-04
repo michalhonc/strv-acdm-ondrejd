@@ -27,8 +27,7 @@ export const LoginPage: NextPage = () => {
       <form onSubmit={handleSubmit} id="complicatedForm">
         {error && <p>{error}</p>}
         <Input
-          hasError={Boolean(error)}
-          error={error}
+          hasError={error ? true : false}
           label="email"
           type="email"
           name="email"

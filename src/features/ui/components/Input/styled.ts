@@ -19,6 +19,7 @@ export const LabelText = styled.span`
   color: ${colors.text.formLabel};
   transition: 0.4s transform;
   transform-origin: 0 50%;
+  background-color: #7f3abc;
 `
 
 export const StyledInput = styled.input`
@@ -39,9 +40,10 @@ export const StyledInput = styled.input`
     opacity: 0;
   }
 
-  // If the element is in focus state I'm targeting the LabelText
+  // If the element is in focus state I'm targeting the LabelText and applying
+  // following rules over it.
   // &:not(:placeholder-shown) this code makes sure that label text sticks up
-  // when there's something in the input file
+  // when placeholder is not visible => input has value in the field
 
   &:focus + ${LabelText}, &:not(:placeholder-shown) + ${LabelText} {
     transform: translateY(-2.5rem) scale(0.8);
@@ -64,9 +66,13 @@ export const Label = styled.label<{ hasError?: boolean }>`
 
   ${(props) =>
     props.hasError &&
+    // Correct behavior would be coloring the StyledInput with colors.accent.destructive
+    // the same way it's purple now. It seems targeting is not working and it always
+    // the color to the Label instead of StyledInput.
     css`
       animation: 0.5s ${shake} ${StyledInput} {
-        border-bottom-color: ${colors.accent.destructive};
+        background-color: ${colors.accent.destructive};
       }
+      background-color: ${colors.accent.destructive};
     `}
 `
