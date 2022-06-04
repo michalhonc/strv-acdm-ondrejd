@@ -3,15 +3,17 @@ import type { FC } from 'react'
 
 import { Routes } from '~/features/core/constants/routes'
 
+import { StyledLink, StyledWrapper } from './styled'
+
 export const SignIn: FC = () => (
   <Link href={Routes.LOGIN}>
-    <div>
-      Already have an account?{' '}
+    <StyledWrapper>
       <span>
-        <button type="button">
+        Do you have an account?{' '}
+        <StyledLink type="button">
           <b>SIGN IN</b>
-        </button>
+        </StyledLink>
       </span>
-    </div>
+    </StyledWrapper>
   </Link>
 )

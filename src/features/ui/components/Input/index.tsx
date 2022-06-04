@@ -42,7 +42,7 @@ export const Input: FC<Props> = ({
             onClick={() => togglePassword(!isPasswordShown)}
             aria-label="Display password"
           >
-            {isPasswordShown ? '🤪' : '👁️'}
+            {isPasswordShown ? '🤭' : '👁️'}
           </PasswordToggle>
         )}
       </Label>

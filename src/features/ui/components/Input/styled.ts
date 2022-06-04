@@ -8,7 +8,7 @@ export const InputWrapper = styled.div`
   font-size: 1.6rem;
 `
 
-export const PasswordToggle = styled.button`
+export const PasswordToggle = styled.a`
   ${StyleReset}
   display: inline-block;
   position: absolute;
