@@ -8,6 +8,14 @@ export const InputWrapper = styled.div`
   font-size: 1.6rem;
 `
 
+export const PasswordToggle = styled.button`
+  ${StyleReset}
+  display: inline-block;
+  position: absolute;
+  top: 1.5rem;
+  left: 95%;
+`
+
 export const LabelText = styled.span`
   /* padding */
   display: block;
@@ -19,7 +27,6 @@ export const LabelText = styled.span`
   color: ${colors.text.formLabel};
   transition: 0.4s transform;
   transform-origin: 0 50%;
-  background-color: #7f3abc;
 `
 
 export const StyledInput = styled.input`
@@ -31,6 +38,7 @@ export const StyledInput = styled.input`
   outline: none;
   border-bottom: 1px solid ${colors.text.formLabel};
   transition: border-bottom-color 0.2s;
+  /* background-color: #7f3abc; */
 
   &:focus {
     border-bottom-color: ${colors.accent.primary};
@@ -69,9 +77,10 @@ export const Label = styled.label<{ hasError?: boolean }>`
     // Correct behavior would be coloring the StyledInput with colors.accent.destructive
     // the same way it's purple now. It seems targeting is not working and it always
     // the color to the Label instead of StyledInput.
+
     css`
       animation: 0.5s ${shake} ${StyledInput} {
-        background-color: ${colors.accent.destructive};
+        /* background-color: ${colors.accent.destructive}; */
       }
       background-color: ${colors.accent.destructive};
     `}
