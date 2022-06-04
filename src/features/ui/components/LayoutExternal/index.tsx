@@ -13,7 +13,7 @@ export const LayoutExternal: FC<Props> = ({ children }) => {
   return (
     <Wrapper>
       <AsidePanel />
-      <Header />
+      <Header isExternal />
       <Main>{children}</Main>
     </Wrapper>
   )

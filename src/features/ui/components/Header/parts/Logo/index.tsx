@@ -3,8 +3,17 @@ import type { FC } from 'react'
 
 import { Routes } from '~/features/core/constants/routes'
 
-export const Logo: FC = () => (
+import { LogoIcon } from './parts/LogoIcon'
+
+type Props = {
+  className?: string
+}
+
+export const Logo: FC<Props> = ({ className }) => (
   <Link href={Routes.DASHBOARD}>
-    <a aria-label="Eventio home button">E.</a>
+    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+    <a className={className} aria-label="Eventio home button">
+      <LogoIcon />
+    </a>
   </Link>
 )

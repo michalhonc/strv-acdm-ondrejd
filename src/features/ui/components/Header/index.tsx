@@ -1,22 +1,23 @@
 import { useRouter } from 'next/router'
 import type { FC } from 'react'
 
-import { Logo } from './parts/Logo'
 import { SignIn } from './parts/SignIn'
 import { SignUp } from './parts/SignUp'
 import { UserMenu } from './parts/UserMenu'
-import { HeaderContainer } from './styled'
+import { HeaderContainer, StyledLogo } from './styled'
 
 type Props = {
   user?: string
+  isExternal?: boolean
 }
 
-export const Header: FC<Props> = ({ user }) => {
+export const Header: FC<Props> = ({ user, isExternal }) => {
   const router = useRouter()
 
   return (
-    <HeaderContainer>
-      <Logo />
+    <HeaderContainer isAbsolute={isExternal}>
+      <StyledLogo />
+
       {/* {TODO: change to the switch statement} */}
       {router.pathname === '/login' && <SignUp />}
       {router.pathname === '/signUp' && <SignIn />}

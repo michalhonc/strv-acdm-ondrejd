@@ -16,6 +16,7 @@ export const AsidePanel: FC = () => {
         objectPosition="right"
         placeholder="blur"
         priority
+        aria-hidden="true"
       />
 
       <Figure>

@@ -1,8 +1,20 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+import { Logo } from './parts/Logo'
+
+import { colors } from '../../theme/colors'
 import { mq, ScreenSize } from '../../theme/mq'
 
-export const HeaderContainer = styled.header`
+// Grabbing a whole Logo component and changing color to the base color
+export const StyledLogo = styled(Logo)`
+  color: ${colors.text.base};
+`
+
+type HeaderProps = {
+  isAbsolute?: boolean
+}
+
+export const HeaderContainer = styled.header<HeaderProps>`
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -12,6 +24,7 @@ export const HeaderContainer = styled.header`
   min-height: 8rem;
   padding: 0 2rem;
   /* max-width: ${ScreenSize.large / 10}rem; */
+  z-index: 100;
 
   ${mq.medium} {
     padding: 0 2rem;
@@ -20,4 +33,18 @@ export const HeaderContainer = styled.header`
   ${mq.large} {
     padding: 0 4rem;
   }
+
+  ${(props) =>
+    props.isAbsolute &&
+    css`
+      ${mq.medium} {
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+
+        ${StyledLogo} {
+          color: ${colors.text.inverted};
+        }
+      }
+    `}
 `
