@@ -1,3 +1,5 @@
-import styled from 'styled-components'
-
-export const Typography = styled.div``
+export const typography = {
+  font: {
+    base: 'Hind',
+  },
+}

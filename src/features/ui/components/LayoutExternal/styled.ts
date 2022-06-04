@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   // Keeps the aside panel on whole screen
   min-height: 100%;
 `
@@ -13,6 +13,6 @@ export const Main = styled.main`
   display: block;
   padding: 10rem 0;
   gap: 1rem;
-  // Center objects like a GOAT with margin: 0 auto
+  //GOAT centering trick with margin: 0 auto
   margin: 0 auto;
 `

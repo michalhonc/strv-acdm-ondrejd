@@ -38,7 +38,6 @@ export const StyledInput = styled.input`
   outline: none;
   border-bottom: 1px solid ${colors.text.formLabel};
   transition: border-bottom-color 0.2s;
-  /* background-color: #7f3abc; */
 
   &:focus {
     border-bottom-color: ${colors.accent.primary};
@@ -67,7 +66,11 @@ from { transform: none}
 to { transform: none}
 `
 
-export const Label = styled.label<{ hasError?: boolean }>`
+type LabelProps = {
+  hasError?: boolean
+}
+
+export const Label = styled.label<LabelProps>`
   display: block;
   position: relative;
   padding-top: 2rem;
@@ -79,9 +82,9 @@ export const Label = styled.label<{ hasError?: boolean }>`
     // the color to the Label instead of StyledInput.
 
     css`
-      animation: 0.5s ${shake} ${StyledInput} {
-        /* background-color: ${colors.accent.destructive}; */
+      animation: 0.5s ${shake};
+      ${StyledInput} {
+        background-color: ${colors.accent.destructive};
       }
-      background-color: ${colors.accent.destructive};
     `}
 `

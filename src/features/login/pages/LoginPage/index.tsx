@@ -28,6 +28,7 @@ export const LoginPage: NextPage = () => {
         {error && <p>{error}</p>}
         <Input
           hasError={error ? true : false}
+          key={error}
           label="email"
           type="email"
           name="email"

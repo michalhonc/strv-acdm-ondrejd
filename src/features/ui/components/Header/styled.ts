@@ -27,21 +27,22 @@ export const HeaderContainer = styled.header<HeaderProps>`
   z-index: 100;
 
   ${mq.medium} {
+    // Isn't vw better use-case here?
+    /* padding: 0 2vw; */
     padding: 0 2rem;
   }
 
   ${mq.large} {
+    /* padding: 0 2vw; */
     padding: 0 4rem;
   }
 
   ${(props) =>
     props.isAbsolute &&
     css`
+      // It's important to set mq.medium explicitly here, otherwise there will be
+      // white logo on the smallest size instead of base color
       ${mq.medium} {
-        /* position: absolute;
-        top: 0;
-        left: 0; */
-
         ${StyledLogo} {
           color: ${colors.text.inverted};
         }

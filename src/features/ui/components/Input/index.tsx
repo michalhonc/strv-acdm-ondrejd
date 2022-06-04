@@ -11,7 +11,7 @@ import {
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string
-  error?: string
+  key?: string
   hasError?: boolean
 }
 
@@ -19,7 +19,7 @@ export const Input: FC<Props> = ({
   name,
   label,
   type,
-  error,
+  key,
   hasError,
   ...rest
 }) => {
@@ -28,7 +28,7 @@ export const Input: FC<Props> = ({
 
   return (
     <InputWrapper>
-      <Label key={error} hasError={hasError}>
+      <Label key={key} hasError={hasError}>
         <StyledInput
           placeholder={label}
           name={name}

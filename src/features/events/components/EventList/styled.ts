@@ -32,7 +32,7 @@ export const StyledUl = styled.ul`
   // Getting rid of the default margin of the ul element
   padding: 0;
   list-style: none;
-  gap: 1rem;
+  gap: 2rem;
 `
 export const NavButton = styled.button`
   ${StyleReset}
