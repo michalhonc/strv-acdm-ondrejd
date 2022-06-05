@@ -1,13 +1,7 @@
 import type { FC, InputHTMLAttributes } from 'react'
 import { useState } from 'react'
 
-import {
-  LabelText,
-  StyledInput,
-  Label,
-  InputWrapper,
-  PasswordToggle,
-} from './styled'
+import * as styled from './styled'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string
@@ -27,25 +21,25 @@ export const Input: FC<Props> = ({
   const inputType = isPasswordShown ? 'text' : type
 
   return (
-    <InputWrapper>
-      <Label key={key} hasError={hasError}>
-        <StyledInput
+    <styled.InputWrapper>
+      <styled.Label key={key} hasError={hasError}>
+        <styled.StyledInput
           placeholder={label}
           name={name}
           type={inputType}
           {...rest}
         />
-        <LabelText>{label}</LabelText>
+        <styled.LabelText>{label}</styled.LabelText>
         {type === 'password' && (
-          <PasswordToggle
+          <styled.PasswordToggle
             type="button"
             onClick={() => togglePassword(!isPasswordShown)}
             aria-label="Display password"
           >
-            {isPasswordShown ? '🤭' : '👁️'}
-          </PasswordToggle>
+            <styled.StyledPasswordIcon isActive={isPasswordShown} />
+          </styled.PasswordToggle>
         )}
-      </Label>
-    </InputWrapper>
+      </styled.Label>
+    </styled.InputWrapper>
   )
 }

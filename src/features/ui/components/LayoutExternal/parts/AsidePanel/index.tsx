@@ -3,7 +3,7 @@ import type { FC } from 'react'
 
 // This is the static import of the image. This is the recommended way to import images by Next.js
 import asideImage from './assets/background.jpg'
-import { Aside, Figure, Quote } from './styled'
+import { Aside, Figcap, Figure, Hr, Quote } from './styled'
 
 export const AsidePanel: FC = () => {
   return (
@@ -21,8 +21,8 @@ export const AsidePanel: FC = () => {
 
       <Figure>
         <Quote>Great, kid. Don&apos;t get cocky.</Quote>
-        <hr />
-        <figcaption>San Holo</figcaption>
+        <Hr />
+        <Figcap>San Holo</Figcap>
       </Figure>
     </Aside>
   )

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 // import { colors } from './colors'
-import { typography } from './typography'
+import { font } from './typography'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -29,9 +29,9 @@ font-size: 62.5%;
 
 body {
     font-weight: 400;    
-    font-family: ${typography.font.base};
+    font-family: ${font.base};
     font-size: 1.6rem;
-    font: 400 1.6rem ${typography.font.base};
+    /* font: 400 1.6rem ${font.base}; // Combines 3 line above */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

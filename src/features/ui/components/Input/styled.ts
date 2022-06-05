@@ -1,19 +1,43 @@
 import styled, { css, keyframes } from 'styled-components'
 
+import { PasswordIcon } from './parts/PasswordIcon'
+
 import { colors } from '../../theme/colors'
 import { StyleReset } from '../StyleReset'
 
 export const InputWrapper = styled.div`
-  margin: 1rem 0;
-  font-size: 1.6rem;
+  margin: 2rem auto;
+  /* position: relative; */
+`
+
+// Grabbing a whole Logo component and changing color to the base color
+type PasswordProps = {
+  isActive: boolean
+}
+
+export const StyledPasswordIcon = styled(PasswordIcon)<PasswordProps>`
+  color: ${colors.text.formLabel};
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  ${(props) =>
+    props.isActive &&
+    css`
+      color: ${colors.text.base};
+    `}
 `
 
 export const PasswordToggle = styled.a`
   ${StyleReset}
-  display: inline-block;
   position: absolute;
-  top: 1.5rem;
   left: 95%;
+
+  // Another way how to center the button, but Label flex needs to be block
+  /* position: absolute;
+  left: 95%;
+  transform: translateY(-100%); */
 `
 
 export const LabelText = styled.span`
@@ -23,7 +47,6 @@ export const LabelText = styled.span`
   position: absolute;
   top: 2rem;
   left: 0;
-  width: 100%;
   color: ${colors.text.formLabel};
   transition: 0.4s transform;
   transform-origin: 0 50%;
@@ -34,6 +57,8 @@ export const StyledInput = styled.input`
   /* padding */
 
   display: block;
+  color: ${colors.text.base};
+  // Important for the input to be 100% width
   width: 100%;
   outline: none;
   border-bottom: 1px solid ${colors.text.formLabel};
@@ -71,8 +96,9 @@ type LabelProps = {
 }
 
 export const Label = styled.label<LabelProps>`
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
   padding-top: 2rem;
 
   ${(props) =>
@@ -84,7 +110,7 @@ export const Label = styled.label<LabelProps>`
     css`
       animation: 0.5s ${shake};
       ${StyledInput} {
-        background-color: ${colors.accent.destructive};
+        border-bottom-color: ${colors.accent.destructive};
       }
     `}
 `

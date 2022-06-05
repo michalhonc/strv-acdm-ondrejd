@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import { colors } from '../../theme/colors'
+import { fontSize } from '../../theme/typography'
 import { StyleReset } from '../StyleReset'
 
 type ButtonProps = {
@@ -16,10 +17,13 @@ export const Button = styled.button<ButtonProps>`
 
   // Regular style component styles
   ${StyleReset}
-  //typography.label.large}
+  // Defines whether the buttons will be...
+  display: inline-block; // ... side by side - inline
+  /* display: block; // ... or stacked - block */
+  font-size: ${fontSize.labelText.medium};
   padding: 0.8rem 5.6rem;
   color: var(--text-color);
-  border-radius: 4px;
+  border-radius: 2px;
   transition: background-color 0.3s;
   background-color: var(--background-color);
   border: none;
@@ -56,7 +60,7 @@ export const Button = styled.button<ButtonProps>`
   ${(props) =>
     props.size === 'small' &&
     css`
-      /* typography.label.medium */
+      font-size: ${fontSize.labelText.small};
       padding: 0.3em 2em 0.2em;
     `}
 `

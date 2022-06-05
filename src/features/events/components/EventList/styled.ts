@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { StyleReset } from '~/features/ui/components/StyleReset'
 import { colors } from '~/features/ui/theme/colors'
+import { fontSize, fontWeight } from '~/features/ui/theme/typography'
 
 import { ViewType } from '../EventView/types'
 
@@ -32,10 +33,18 @@ export const StyledUl = styled.ul`
   // Getting rid of the default margin of the ul element
   padding: 0;
   list-style: none;
-  gap: 2rem;
+  gap: 3rem;
 `
 export const NavButton = styled.button`
   ${StyleReset}
+
+  // Is the same
+  /* font-weight: ${fontWeight.filterText}; */
+  font-weight: bold;
+
+  font-size: ${fontSize.filterText};
+  letter-spacing: 0.1rem;
+  color: ${colors.text.base};
 
   &:not(:disabled) {
     cursor: pointer;

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import { colors } from '~/features/ui/theme/colors'
 import { mq } from '~/features/ui/theme/mq'
+import { font } from '~/features/ui/theme/typography'
 
 export const Aside = styled.aside`
   // Making it disappear on mobile
@@ -24,15 +25,29 @@ export const Aside = styled.aside`
   }
 `
 export const Figure = styled.figure`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8rem clamp(2rem, 2.2vw, 4rem) 4rem;
   position: relative;
 `
 
+export const Hr = styled.hr`
+  border: none;
+  height: 1px;
+  margin: 2rem 0 1.3rem 0;
+  width: clamp(1.8rem, 1.5vw, 3rem);
+  background-color: ${colors.accent.primary};
+`
+
 export const Quote = styled.q`
   display: block;
-  margin: 2rem 0;
   text-align: center;
   font-size: clamp(2rem, 2.2vw, 3.6rem);
-  /// font-family: font.quotes
+  font-family: ${font.quote};
   line-height: 1.166;
+`
+
+export const Figcap = styled.figcaption`
+  color: ${colors.text.dimmed};
 `

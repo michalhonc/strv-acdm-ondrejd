@@ -7,7 +7,7 @@ import { Button } from '~/features/ui/components/Button'
 import { Input } from '~/features/ui/components/Input'
 import { LayoutExternal } from '~/features/ui/components/LayoutExternal'
 
-import { SubmitButton } from './styled'
+import { Form, H1, P, SubmitButton } from './styled'
 
 export const LoginPage: NextPage = () => {
   const [error, setError] = useState('')
@@ -22,20 +22,26 @@ export const LoginPage: NextPage = () => {
       <Head>
         <title>Log in to Eventio</title>
       </Head>
-      <h1>Sign in to Eventio.</h1>
-      <p>Enter your details below.</p>
-      <form onSubmit={handleSubmit} id="complicatedForm">
+      <H1>Sign in to Eventio.</H1>
+      <P>Enter your details below.</P>
+      <Form onSubmit={handleSubmit} id="complicatedForm">
         {error && <p>{error}</p>}
         <Input
-          hasError={error ? true : false}
+          hasError={Boolean(error)} // the same as "error ? true : false"
           key={error}
-          label="email"
+          label="Email"
           type="email"
           name="email"
         />
-        <Input label="password" type="password" name="password" />
-      </form>
-
+        <Input
+          hasError={Boolean(error)}
+          key={error + 'just making sure error is unique here'}
+          label="Password"
+          type="password"
+          name="password"
+        />
+      </Form>
+      <SubmitButton form="complicatedForm">SIGN IN</SubmitButton>
       <Button
         type="button"
         size="small"
@@ -46,7 +52,6 @@ export const LoginPage: NextPage = () => {
       </Button>
 
       {/* Button outside the form element it handy when handling complicated layout */}
-      <SubmitButton form="complicatedForm">SIGN IN</SubmitButton>
     </LayoutExternal>
   )
 }
