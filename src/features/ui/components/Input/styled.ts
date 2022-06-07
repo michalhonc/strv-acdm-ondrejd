@@ -54,7 +54,6 @@ export const LabelText = styled.span`
 
 export const StyledInput = styled.input`
   ${StyleReset}
-  /* padding */
 
   display: block;
   color: ${colors.text.base};

@@ -8,7 +8,8 @@ export const Container = styled.div`
   padding: 0 1.8rem;
 
   //  1200 px => 120rem
-  max-width: ${ScreenSize.large / 10}rem;
+  max-width: calc(${ScreenSize.large / 10}rem + 2 * 0.8rem);
+  width: 100%;
   box-sizing: border-box;
   /* background-color: ${colors.background.light}; */
 

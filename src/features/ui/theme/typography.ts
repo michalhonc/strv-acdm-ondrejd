@@ -15,4 +15,5 @@ export const fontSize = {
 
 export const fontWeight = {
   filterText: '600',
+  submitButton: '600',
 }
